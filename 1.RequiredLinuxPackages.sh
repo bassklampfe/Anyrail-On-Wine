@@ -3,7 +3,7 @@
 #----------------------------------------------------------------------
 # this script installs all packages required for Anyrail on Wine
 #----------------------------------------------------------------------
-
+TEST_INSTALL="apt-get -q -q -q --simulate --no-install-recommends install"
 #
 # check if wine is already installed
 #
@@ -15,8 +15,8 @@ else
 	#
 	# try to find out, which wine version is available
 	#
-	if apt show wine >& /dev/null ; then which_wine=wine ; fi
-	if apt show wine-stable >& /dev/null ; then which_wine=wine-stable ; fi
+	if ${TEST_INSTALL} wine >& /dev/null ; then which_wine=wine ; fi
+	if ${TEST_INSTALL} wine-stable >& /dev/null ; then which_wine=wine-stable ; fi
 	if [ "$which_wine" == "" ]
 	then
 		echo "No installable wine found"
@@ -32,4 +32,4 @@ sudo apt install \
 	msitools \
 	icoutils \
 	curl \
-	imagemagick-6.q16 \
+	imagemagick \
