@@ -30,6 +30,7 @@ wrestool -x "--output=${ICONDIR}/" -t14 "${WINEPREFIX}/drive_c/Program Files/Any
 		item=${name%-*}
 		echo "name='${name}' item='${item}' size='${size}'"
 		xdg-icon-resource install --mode user --size ${size} ${png} ${item}
+		xdg-icon-resource install --context mimetypes --mode user --size ${size} ${png} ${item}
 	done
 
 )
@@ -38,7 +39,7 @@ wrestool -x "--output=${ICONDIR}/" -t14 "${WINEPREFIX}/drive_c/Program Files/Any
 #----------------------------------
 # define bin file file
 #----------------------------------
-echo "-- create application type --"
+echo "-- create application script --"
 mkdir -p ~/bin
 cat  << '-EOF-' > ~/bin/AnyRail7
 #!/bin/bash
@@ -97,4 +98,4 @@ cat << -EOF- > /tmp/anyrail-anyrail7-any.xml
 </mime-info>
 -EOF-
 xdg-mime install --mode user /tmp/anyrail-anyrail7-any.xml
-
+update-mime-database ~/.local/share/mime
