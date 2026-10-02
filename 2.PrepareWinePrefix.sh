@@ -8,4 +8,4 @@
 export WINEPREFIX="${HOME}/.wine-anyrail"
 rm -rf "${WINEPREFIX}"
 wineboot -u
-winetricks --unattended win10 gdiplus d3dcompiler_47
+winetricks --unattended win10 gdiplus d3dcompiler_47 corefonts
