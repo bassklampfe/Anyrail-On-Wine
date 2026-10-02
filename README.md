@@ -15,6 +15,7 @@ NOTE: If you haven't had a bin folder in your home before, you will have to relo
 - Export of 3D-View to graphic renders only black on black images
 - On exit Anyrail occasionally crashes (Mostly, when 3D-View is open, so please switch to 2D-View before closing the program)
 - Save location of Tracks is not remembered
+- not all filemanagers will show anyrail icon on *.any files (trouble with mimetypes)
 
 ## Tested on
 
